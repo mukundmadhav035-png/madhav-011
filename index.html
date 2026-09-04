@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Payal ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    overflow-x:hidden;
+    font-family:Arial,sans-serif;
+    color:white;
+    background:
+    radial-gradient(
+        circle at 50% 20%,
+        #5c0d42 0%,
+        #210622 35%,
+        #050107 80%
+    );
+}
+
+/* =====================================================
+   RED SPIDER LILY INTRO SCREEN
+===================================================== */
+
+.flower-intro{
+    position:fixed;
+    inset:0;
+
+    z-index:10000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    background:
+    radial-gradient(
+        circle at 50% 45%,
+        #3b061d 0%,
+        #16020d 45%,
+        #030106 100%
+    );
+
+    overflow:hidden;
+
+    transition:
+    opacity 1.5s ease,
+    visibility 1.5s ease;
+}
+
+.flower-intro.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+
+/* Background red glow */
+
+.flower-intro::before{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    left:50%;
+    top:48%;
+
+    transform:
+    translate(-50%,-50%);
+
+    background:#e60045;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.16;
+
+    animation:
+    lilyGlow 3s infinite alternate;
+}
+
+@keyframes lilyGlow{
+
+    from{
+        transform:
+        translate(-50%,-50%)
+        scale(.7);
+
+        opacity:.10;
+    }
+
+    to{
+        transform:
+        translate(-50%,-50%)
+        scale(1.25);
+
+        opacity:.28;
+    }
+}
+
+
+/* Flower container */
+
+.lily-wrap{
+
+    position:relative;
+
+    width:260px;
+    height:260px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:2;
+
+    transform:scale(.48);
+
+    transition:
+    transform 2.2s
+    cubic-bezier(.17,.67,.25,1.25);
+}
+
+
+/* Flower after clicking */
+
+.lily-wrap.bloom{
+    transform:scale(1);
+}
+
+
+/* SVG Flower */
+
+.spider-lily{
+
+    width:100%;
+    height:100%;
+
+    overflow:visible;
+
+    filter:
+    drop-shadow(0 0 8px #ff174f)
+    drop-shadow(0 0 25px #d6003f);
+}
+
+
+/* Lily petals */
+
+.lily-petal{
+
+    fill:none;
+
+    stroke:#ff174f;
+
+    stroke-width:7;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.95;
+
+    transform-origin:130px 130px;
+
+    animation:
+    petalFloat 3s
+    ease-in-out infinite alternate;
+}
+
+.lily-petal:nth-child(2){
+    animation-delay:.15s;
+}
+
+.lily-petal:nth-child(3){
+    animation-delay:.3s;
+}
+
+.lily-petal:nth-child(4){
+    animation-delay:.45s;
+}
+
+.lily-petal:nth-child(5){
+    animation-delay:.6s;
+}
+
+.lily-petal:nth-child(6){
+    animation-delay:.75s;
+}
+
+.lily-petal:nth-child(7){
+    animation-delay:.9s;
+}
+
+@keyframes petalFloat{
+
+    from{
+        opacity:.65;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+/* Spider Lily stamens */
+
+.lily-stamen{
+
+    stroke:#ff6b86;
+
+    stroke-width:2;
+
+    fill:none;
+
+    stroke-linecap:round;
+
+    opacity:0;
+
+    transition:
+    opacity 1.5s ease;
+}
+
+.lily-wrap.bloom .lily-stamen{
+    opacity:1;
+}
+
+
+/* Center */
+
+.lily-center{
+
+    fill:#ffcf4a;
+
+    filter:
+    drop-shadow(
+        0 0 10px #ffbd00
+    );
+
+    transform:
+    scale(.5);
+
+    transform-origin:130px 130px;
+
+    transition:
+    transform 1.5s ease;
+}
+
+.lily-wrap.bloom .lily-center{
+    transform:scale(1);
+}
+
+
+/* Click text */
+
+.flower-text{
+
+    margin-top:15px;
+
+    z-index:3;
+
+    text-align:center;
+
+    color:#ffd7e2;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    animation:
+    textPulse 2s infinite ease-in-out;
+
+    transition:
+    opacity .7s ease;
+}
+
+.lily-wrap.bloom + .flower-text{
+    opacity:0;
+}
+
+@keyframes textPulse{
+
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+
+/* Bloom particles */
+
+.lily-particle{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#ff315d;
+
+    box-shadow:
+    0 0 10px #ff174f,
+    0 0 20px #ff174f;
+
+    opacity:0;
+}
+
+.flower-intro.blooming .lily-particle{
+    animation:
+    lilyParticle 2s forwards;
+}
+
+@keyframes lilyParticle{
+
+    0%{
+        opacity:0;
+        transform:translate(0,0) scale(.2);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translate(
+            var(--px),
+            var(--py)
+        )
+        scale(1.5);
+    }
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#ff0080;
+
+    border-radius:50%;
+
+    filter:blur(160px);
+
+    opacity:.25;
+
+    left:50%;
+    top:30%;
+
+    transform:
+    translate(-50%,-50%);
+
+    animation:
+    glow 5s infinite alternate;
+
+    pointer-events:none;
+}
+
+@keyframes glow{
+
+    from{
+        transform:
+        translate(-50%,-50%)
+        scale(.8);
+
+        opacity:.15;
+    }
+
+    to{
+        transform:
+        translate(-50%,-50%)
+        scale(1.4);
+
+        opacity:.35;
+    }
+}
+
+
+/* =====================================================
+   STRING LIGHTS
+===================================================== */
+
+.lights{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    z-index:3;
+
+    pointer-events:none;
+}
+
+.bulb{
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 25px #ff5caa;
+
+    animation:
+    bulbGlow 1.5s infinite alternate;
+}
+
+@keyframes bulbGlow{
+
+    from{
+        opacity:.4;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container{
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:75px 20px 50px;
+}
+
+
+/* Small Heading */
+
+.small-title{
+
+    font-size:13px;
+
+    letter-spacing:5px;
+
+    color:#ffc7dc;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+    animation:
+    fadeUp 1s ease;
+}
+
+
+/* Main Birthday Heading */
+
+h1{
+
+    font-size:
+    clamp(45px,10vw,90px);
+
+    line-height:.9;
+
+    font-family:cursive;
+
+    margin-bottom:10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #ffb4cf,
+        #ff2381,
+        #fff
+    );
+
+    background-size:250%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    titleGlow 3s infinite linear,
+    titleFloat 3s infinite ease-in-out;
+}
+
+@keyframes titleGlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:250%;
+    }
+}
+
+@keyframes titleFloat{
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+
+/* Payal */
+
+.payal{
+
+    font-size:
+    clamp(55px,12vw,110px);
+
+    color:#ff3d9a;
+
+    text-shadow:
+    0 0 10px #ff3d9a,
+    0 0 30px #ff0077,
+    0 0 60px #ff0077;
+}
+
+
+/* Subtitle */
+
+.subtitle{
+
+    color:#ffd8e8;
+
+    font-size:16px;
+
+    margin:20px 0 30px;
+}
+
+
+/* =====================================================
+   PHOTO SLIDESHOW
+===================================================== */
+
+.slideshow{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:650px;
+
+    height:360px;
+
+    margin:0 auto 30px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:
+    2px solid
+    rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 20px #ff147b,
+    0 20px 60px rgba(0,0,0,.8);
+}
+
+.slide{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transform:scale(1.15);
+
+    transition:
+    opacity 1.5s ease,
+    transform 5s ease;
+}
+
+.slide.active{
+
+    opacity:1;
+
+    transform:scale(1);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+
+    border:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff087b,
+        #8b0b51
+    );
+
+    padding:16px 30px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px #ff087b,
+    0 10px 40px
+    rgba(255,0,120,.4);
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 30px #ff087b,
+    0 15px 50px
+    rgba(255,0,120,.6);
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake-area{
+    margin-top:40px;
+}
+
+.cake{
+
+    font-size:100px;
+
+    display:inline-block;
+
+    animation:
+    cakeBounce 1s infinite alternate,
+    cakeRotate 4s infinite ease-in-out;
+
+    filter:
+    drop-shadow(
+        0 0 20px #ff9dca
+    );
+}
+
+@keyframes cakeBounce{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes cakeRotate{
+
+    0%,100%{
+        rotate:-3deg;
+    }
+
+    50%{
+        rotate:3deg;
+    }
+}
+
+
+/* =====================================================
+   BALLOONS
+===================================================== */
+
+.balloon{
+
+    position:fixed;
+
+    bottom:-120px;
+
+    z-index:2;
+
+    font-size:70px;
+
+    animation:
+    balloonFly linear forwards;
+}
+
+@keyframes balloonFly{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(-10deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+        translateY(-55vh)
+        rotate(10deg);
+    }
+
+    100%{
+        transform:
+        translateY(-120vh)
+        rotate(-10deg);
+
+        opacity:0;
+    }
+}
+
+
+/* Balloon Pop */
+
+.pop{
+
+    position:fixed;
+
+    z-index:100;
+
+    font-size:30px;
+
+    pointer-events:none;
+
+    animation:
+    pop .7s forwards;
+}
+
+@keyframes pop{
+
+    0%{
+        transform:scale(.2);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(2);
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   HEARTS
+===================================================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    z-index:1;
+
+    pointer-events:none;
+
+    animation:
+    heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0)
+        scale(.5);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(-115vh)
+        rotate(360deg)
+        scale(1.5);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:10px;
+    height:15px;
+
+    z-index:200;
+
+    animation:
+    confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(900deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   FIREWORKS
+===================================================== */
+
+.firework{
+
+    position:fixed;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    z-index:50;
+
+    pointer-events:none;
+
+    box-shadow:
+    0 0 10px white;
+}
+
+.firework-particle{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    animation:
+    fireworkExplosion 1s forwards;
+}
+
+@keyframes fireworkExplosion{
+
+    from{
+        transform:
+        translate(0,0);
+
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translate(
+            var(--x),
+            var(--y)
+        );
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   BIRTHDAY LETTER
+===================================================== */
+
+.letter-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.82);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:500;
+
+    animation:
+    fade .5s ease;
+}
+
+.hidden{
+    display:none;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.letter{
+
+    width:100%;
+
+    max-width:520px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:40px 30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff9f4,
+        #ffe5ed
+    );
+
+    color:#3a1823;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 50px #ff2380,
+    0 30px 100px #000;
+
+    animation:
+    letterOpen
+    .8s
+    cubic-bezier(.17,.67,.35,1.3);
+}
+
+@keyframes letterOpen{
+
+    from{
+        transform:
+        scale(.2)
+        rotate(-10deg);
+
+        opacity:0;
+    }
+
+    to{
+        transform:
+        scale(1)
+        rotate(0);
+
+        opacity:1;
+    }
+}
+
+.letter h2{
+
+    color:#d31356;
+
+    font-size:35px;
+
+    margin-bottom:20px;
+}
+
+.letter p{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+}
+
+.signature{
+    color:#8c3857;
+}
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+.music{
+
+    position:fixed;
+
+    left:15px;
+    bottom:15px;
+
+    z-index:300;
+
+    background:
+    rgba(0,0,0,.75);
+
+    border:
+    1px solid #ff4d9d;
+
+    border-radius:50px;
+
+    padding:10px 18px;
+
+    color:white;
+
+    box-shadow:
+    0 0 20px
+    rgba(255,0,120,.5);
+}
+
+.music button{
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:14px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    animation:
+    fadeUp 2s ease;
+}
+
+.final-message h2{
+
+    font-size:28px;
+
+    color:#ff7fb0;
+
+    margin-bottom:10px;
+}
+
+.final-message p{
+
+    color:#e9cbd7;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FADE UP
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .container{
+        padding-top:80px;
+    }
+
+    .slideshow{
+        height:300px;
+    }
+
+    .cake{
+        font-size:75px;
+    }
+
+    .letter{
+        padding:30px 20px;
+    }
+
+    .letter h2{
+        font-size:28px;
+    }
+
+    .letter p{
+        font-size:15px;
+    }
+
+    .music{
+        bottom:10px;
+        left:10px;
+    }
+
+    .lily-wrap{
+        width:230px;
+        height:230px;
+    }
+
+    .flower-text{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     RED SPIDER LILY INTRO
+===================================================== -->
+
+<div
+    class="flower-intro"
+    id="flowerIntro"
+>
+
+    <div
+        class="lily-wrap"
+        id="lilyWrap"
+        onclick="bloomLily()"
+    >
+
+        <svg
+            class="spider-lily"
+            viewBox="0 0 260 260"
+        >
+
+            <!-- Petals -->
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C115 105 85 85 55 92
+                   C80 105 100 120 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C105 115 75 80 82 48
+                   C100 70 118 95 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C120 100 120 65 142 38
+                   C145 70 140 105 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C145 100 170 65 200 60
+                   C180 85 155 110 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C155 120 195 105 218 125
+                   C185 130 155 135 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C155 140 190 160 195 190
+                   C170 170 145 150 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C140 155 135 195 110 220
+                   C112 180 120 150 130 130"
+            />
+
+            <path
+                class="lily-petal"
+                d="M130 130
+                   C115 150 80 175 50 168
+                   C78 150 105 138 130 130"
+            />
+
+
+            <!-- Spider Lily Stamens -->
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q100 80 62 55"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q118 75 105 35"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q145 75 160 32"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q175 85 210 65"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q185 125 225 125"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q175 160 205 190"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q145 180 135 225"
+            />
+
+            <path
+                class="lily-stamen"
+                d="M130 130 Q100 170 55 180"
+            />
+
+
+            <!-- Golden center -->
+
+            <circle
+                class="lily-center"
+                cx="130"
+                cy="130"
+                r="8"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <div class="flower-text">
+        Tap the flower 🌺
+    </div>
+
+
+    <!-- Bloom particles -->
+
+    <span class="lily-particle" style="left:50%;top:45%;--px:-100px;--py:-100px;"></span>
+    <span class="lily-particle" style="left:50%;top:45%;--px:110px;--py:-80px;"></span>
+    <span class="lily-particle" style="left:50%;top:45%;--px:-130px;--py:30px;"></span>
+    <span class="lily-particle" style="left:50%;top:45%;--px:130px;--py:40px;"></span>
+    <span class="lily-particle" style="left:50%;top:45%;--px:-60px;--py:130px;"></span>
+    <span class="lily-particle" style="left:50%;top:45%;--px:70px;--py:120px;"></span>
+
+</div>
+
+
+
+<!-- =====================================================
+     STRING LIGHTS
+===================================================== -->
+
+<div
+    class="lights"
+    id="lights">
+</div>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="container">
+
+
+    <div class="small-title">
+        A Special Celebration For
+    </div>
+
+
+    <h1>
+
+        Happy Birthday
+
+        <div class="payal">
+            Payal ❤️
+        </div>
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        Wishing you all the happiness
+        in the world! ✨
+
+    </p>
+
+
+    <!-- Photo Slideshow -->
+
+    <div class="slideshow">
+
+        <img
+            class="slide active"
+            src="photo1.jpg"
+            alt="Payal Photo 1"
+        >
+
+        <img
+            class="slide"
+            src="photo2.jpg"
+            alt="Payal Photo 2"
+        >
+
+        <img
+            class="slide"
+            src="photo3.jpg"
+            alt="Payal Photo 3"
+        >
+
+    </div>
+
+
+    <!-- Birthday Letter Button -->
+
+    <button
+        class="btn"
+        onclick="openLetter()"
+    >
+
+        💌 Open Birthday Letter
+
+    </button>
+
+
+    <!--
